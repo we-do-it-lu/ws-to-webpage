@@ -1,12 +1,12 @@
 # ws-to-webpage
 A simple way to display the output of system websocket in a web page with a nice vintage old school terminal look and feel.
 
-##Pre-requisite: 
+## Pre-requisite: 
 - [websocketd](https://github.com/joewalnes/websocketd): Small command-line tool that will wrap an existing command-line interface program, and allow it to be accessed via a WebSocket. WebSocket-capable applications can be built very easily with this. As long as you can write an executable program that reads STDIN and writes to STDOUT, you can build a WebSocket server. No networking libraries necessary.
 - we use Visual Studio to edit; the .scss file(s) are converted into .css within Visual Studio with the "Live Sass Compiler" add-on (it compiles .scss into .css)
-- [wscat](https://github.com/websockets/wscat/blob/master/README.md): WebSocket cat.
+- [wscat](https://github.com/websockets/wscat/blob/master/README.md): WebSocket cat. It's similar to curl but for WebSockets (URL starting with ```ws://```). It will be great to test websocketd.
 
-##Installation:
+## Installation:
 - Just clone the repository
 - Make sure [websocketd](https://github.com/joewalnes/websocketd/blob/master/README.md) is installed on the server.
 - Launch it with the following command so it redirects the output of ````script.sh```` (or whatever script or command you like) to WebSocket onto port ````8080```` (or whatever port you prefer)
@@ -34,5 +34,10 @@ To test you can simply access ````ws.html```` using your internet browser since 
 To the outside world you would access it through a web server e.g. apache, nginx ...  just make sure you adjust ````SERVER:PORT```` in ````ws.html````:
 `````
 var ws = new WebSocket('ws://SERVER:PORT/');
+`````
 
 Also make sure that no firewall is blocking PORT.
+
+![](ws-to-webpage.png)
+
+
